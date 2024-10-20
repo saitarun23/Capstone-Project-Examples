@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AdmindashboardComponent,
+    CustomerdashboardComponent
   ],
   imports: [
     BrowserModule,
