@@ -20,7 +20,7 @@ public class LoginService {
 			Login ll=result.get();
 			if(ll.getPassword().equals(login.getPassword())) {
 				if(ll.getTypeofuser().equals("admin") && login.getTypeofuser().equals("admin")) {
-					return "Admin Login Successfully";
+					return "Admin login successfully";
 				}else if(ll.getTypeofuser().equals("customer") && login.getTypeofuser().equals("customer")) {
 					return "Customer login successfully";
 				}else {
