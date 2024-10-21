@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div>
+    <form [formGroup]="loginRef" (ngSubmit)="signIn()">
+        <label>EmailId</label>
+        <input type="email" formControlName="emailid"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="password"/><br/>
+        <label>TypeOfUser</label>
+        <input type="radio" formControlName="typeofuser" value="admin"/>Admin
+        <input type="radio" formControlName="typeofuser" value="customer"/>User<br/>
+        <input type="submit" value="SignIn"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br/>
+    <span style="color:red">{{msg}}</span>
+    <br/>
+    <a routerLink="signup" skipLocationChange="true">SignUp</a>
+</div>
