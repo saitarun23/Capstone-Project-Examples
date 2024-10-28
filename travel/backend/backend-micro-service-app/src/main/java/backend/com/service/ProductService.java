@@ -20,7 +20,8 @@ public class ProductService {
 		if(result.isPresent()) {
 			return "Product Id must be unique";
 		}else {
-			return "Product Stored Successfully";
+			productRepository.save(product);
+			return "Product stored successfully";
 		}
 	}
 	
