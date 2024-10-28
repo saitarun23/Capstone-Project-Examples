@@ -22,7 +22,7 @@ public class Orders {
 	private String emailid;			//FK
 	private float amount;			// total amount 
 	@Column(columnDefinition = "enum('pending','shipped','delivered','cancelled')default 'pending'")
-	private String status;
+	private String status="pending";
 	private LocalDateTime orderdate;
 	@OneToMany
 	@JoinColumn(name="oid")
