@@ -6,5 +6,7 @@ export class Product {
         public description:string,
         public imageurl:string,
         public stock:number
-    ){}
+    ){
+
+    }
 }

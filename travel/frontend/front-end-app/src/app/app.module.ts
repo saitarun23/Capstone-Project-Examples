@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AdminProductOperationComponent } from './admin-product-operation/admin-product-operation.component';
 import { CustomerProductOperationComponent } from './customer-product-operation/customer-product-operation.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { CustomerProductOperationComponent } from './customer-product-operation/
     AdmindashboardComponent,
     CustomerdashboardComponent,
     AdminProductOperationComponent,
-    CustomerProductOperationComponent
+    CustomerProductOperationComponent,
+   
   ],
   imports: [
     BrowserModule,

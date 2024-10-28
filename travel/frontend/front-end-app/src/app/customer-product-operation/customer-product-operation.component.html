@@ -1,1 +1,21 @@
-<p>customer-product-operation works!</p>
+<div>
+    <a (click)="logout()">Logout</a>
+    <br/>
+    <div>Number Of Item in Cart is {{cart.length}} <input type="button" value="View Cart" (click)="viewCart()"/></div>
+    <div *ngIf="flag">
+        <div *ngFor="let product of products" class="imageClass">
+            <img src={{product.imageurl}} width="200px" height="200px"/>
+            <span>Name : {{product.pname}} Price: {{product.price}}</span>
+            <input type="button" value="Add To Cart" (click)="storeInCart(product)"/>
+        </div>
+    </div>
+    <div *ngIf="!flag">
+        <div *ngFor="let cc of cart;let i=index">
+            i) {{cc.pname}} Quantity {{cc.qty}} 
+            <input type="button" value="increment" (click)="increment(i)"/>
+            <input type="button" value="decrement" (click)="decrement(i)"/>
+            total {{cc.qty*cc.price}}
+            <input type="button" value="remove" (click)="remove(i)"/>
+        </div>
+    </div>
+</div>
