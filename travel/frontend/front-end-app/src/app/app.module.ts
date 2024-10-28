@@ -9,6 +9,8 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { AdminProductOperationComponent } from './admin-product-operation/admin-product-operation.component';
+import { CustomerProductOperationComponent } from './customer-product-operation/customer-product-operation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     SignupComponent,
     AdmindashboardComponent,
-    CustomerdashboardComponent
+    CustomerdashboardComponent,
+    AdminProductOperationComponent,
+    CustomerProductOperationComponent
   ],
   imports: [
     BrowserModule,
