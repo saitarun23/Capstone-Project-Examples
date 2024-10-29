@@ -78,4 +78,8 @@ export class CustomerProductOperationComponent implements OnInit {
   updateTotalAmount(): void {
     this.totalAmount = this.cart.reduce((sum, item) => sum + item.total, 0);
   }
+
+  submitOrder(): void {
+    this.router.navigate(['/orders'], { state: { cart: this.cart, totalAmount: this.totalAmount } });
+  }
 }

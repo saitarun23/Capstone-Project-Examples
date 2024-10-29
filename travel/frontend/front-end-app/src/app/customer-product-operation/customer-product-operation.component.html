@@ -3,28 +3,29 @@
     <br/>
     <div>
         Number Of Items in Cart: {{cart.length}}
-        <input type="button" value="View Cart" (click)="viewCart()"/>
+        <input type="button" value="View Cart" (click)="viewCart()" />
     </div>
-    
+
     <!-- Product List Display -->
     <div *ngIf="flag">
         <div *ngFor="let product of products" class="imageClass">
-            <img [src]="product.imageurl" width="200px" height="200px"/>
-            <span>Name: {{product.pname}} | Price: {{product.price | currency}}</span>
-            <input type="button" value="Add To Cart" (click)="storeInCart(product)"/>
+            <img [src]="product.imageurl" width="200px" height="200px" />
+            <span>Name: {{ product.pname }} | Price: {{ product.price | currency }}</span>
+            <input type="button" value="Add To Cart" (click)="storeInCart(product)" />
         </div>
     </div>
-    
+
     <!-- Cart Display -->
     <div *ngIf="!flag">
         <h3>Shopping Cart</h3>
         <div *ngFor="let cc of cart; let i = index">
-            <span>{{i + 1}} {{cc.pname}} - Quantity: {{cc.qty}} | Total: {{cc.total | currency}}</span>
-            <input type="button" value="Increment" (click)="increment(i)"/>
-            <input type="button" value="Decrement" (click)="decrement(i)"/>
-            <input type="button" value="Remove" (click)="remove(i)"/>
+            <span>{{ i + 1 }} {{ cc.pname }} - Quantity: {{ cc.qty }} | Total: {{ cc.total | currency }}</span>
+            <input type="button" value="Increment" (click)="increment(i)" />
+            <input type="button" value="Decrement" (click)="decrement(i)" />
+            <input type="button" value="Remove" (click)="remove(i)" />
         </div>
-        <h4>Total Amount: {{totalAmount | currency}}</h4>
-        <input type="button" value="Back to Products" (click)="flag = true"/>
+        <h4>Total Amount: {{ totalAmount | currency }}</h4>
+        <input type="button" value="Submit Order" (click)="submitOrder()" />
+        <input type="button" value="Back to Products" (click)="flag = true" />
     </div>
 </div>
