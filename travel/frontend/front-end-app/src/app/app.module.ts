@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AdminProductOperationComponent } from './admin-product-operation/admin-product-operation.component';
 import { CustomerProductOperationComponent } from './customer-product-operation/customer-product-operation.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderItemComponent } from './order-item/order-item.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { CustomerProductOperationComponent } from './customer-product-operation/
     CustomerdashboardComponent,
     AdminProductOperationComponent,
     CustomerProductOperationComponent,
+    OrdersComponent,
+    OrderItemComponent,
    
   ],
   imports: [

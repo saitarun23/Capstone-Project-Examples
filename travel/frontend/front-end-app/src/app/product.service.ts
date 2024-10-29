@@ -17,4 +17,7 @@ baseUrl:string ="http://localhost:9090/product"
   storeProduct(product:any):Observable<string> {
     return this.http.post(this.baseUrl+"/store",product,{responseType:'text'})
   }
+
+ 
+
 }

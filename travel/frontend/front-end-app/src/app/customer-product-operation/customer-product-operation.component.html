@@ -1,21 +1,30 @@
 <div>
     <a (click)="logout()">Logout</a>
     <br/>
-    <div>Number Of Item in Cart is {{cart.length}} <input type="button" value="View Cart" (click)="viewCart()"/></div>
+    <div>
+        Number Of Items in Cart: {{cart.length}}
+        <input type="button" value="View Cart" (click)="viewCart()"/>
+    </div>
+    
+    <!-- Product List Display -->
     <div *ngIf="flag">
         <div *ngFor="let product of products" class="imageClass">
-            <img src={{product.imageurl}} width="200px" height="200px"/>
-            <span>Name : {{product.pname}} Price: {{product.price}}</span>
+            <img [src]="product.imageurl" width="200px" height="200px"/>
+            <span>Name: {{product.pname}} | Price: {{product.price | currency}}</span>
             <input type="button" value="Add To Cart" (click)="storeInCart(product)"/>
         </div>
     </div>
+    
+    <!-- Cart Display -->
     <div *ngIf="!flag">
-        <div *ngFor="let cc of cart;let i=index">
-            i) {{cc.pname}} Quantity {{cc.qty}} 
-            <input type="button" value="increment" (click)="increment(i)"/>
-            <input type="button" value="decrement" (click)="decrement(i)"/>
-            total {{cc.qty*cc.price}}
-            <input type="button" value="remove" (click)="remove(i)"/>
+        <h3>Shopping Cart</h3>
+        <div *ngFor="let cc of cart; let i = index">
+            <span>{{i + 1}} {{cc.pname}} - Quantity: {{cc.qty}} | Total: {{cc.total | currency}}</span>
+            <input type="button" value="Increment" (click)="increment(i)"/>
+            <input type="button" value="Decrement" (click)="decrement(i)"/>
+            <input type="button" value="Remove" (click)="remove(i)"/>
         </div>
+        <h4>Total Amount: {{totalAmount | currency}}</h4>
+        <input type="button" value="Back to Products" (click)="flag = true"/>
     </div>
 </div>
