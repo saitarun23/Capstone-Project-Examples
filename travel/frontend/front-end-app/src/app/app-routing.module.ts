@@ -6,7 +6,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 import { AdminProductOperationComponent } from './admin-product-operation/admin-product-operation.component';
 import { CustomerProductOperationComponent } from './customer-product-operation/customer-product-operation.component';
-import { OrdersComponent } from './orders/orders.component';
+
 
 
 const routes: Routes = [
@@ -18,7 +18,6 @@ const routes: Routes = [
   ]},
   {path:"customer",component:CustomerdashboardComponent,children:[
     {path:"product",component:CustomerProductOperationComponent},
-    { path: 'orders', component: OrdersComponent }
   ]}
 ];
 

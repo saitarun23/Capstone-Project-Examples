@@ -11,40 +11,38 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  loginRef=new FormGroup({
+  loginRef = new FormGroup({
     emailid:new FormControl(),
     password:new FormControl(),
     typeofuser:new FormControl()
   });
-
-  msg:string="";
-
-  constructor(public ls:LoginService,public router:Router){}    // DI for LoginService
-
-  signIn():void{
-    let login=this.loginRef.value;
-      //console.log(login);
+msg:string ="";
+  constructor(public ls:LoginService,public router:Router){}     // DI for LoginService 
+  signIn(): void {
+    let login = this.loginRef.value;
+    //console.log(login);
     this.ls.signIn(login).subscribe({
-
-      next:(result:any)=>{
-
+      next:(result:any)=> {
+        //console.log(result)
+        
         if(result=="Admin login successfully"){
-          this.router.navigate(["admin"],{skipLocationChange:true})
+            this.router.navigate(["admin"],{skipLocationChange:true})
         }else if(result=="Customer login successfully"){
           this.router.navigate(["customer"],{skipLocationChange:true})
-        }else{
+        }else {
           this.msg=result;
         }
+        
       },
-
-      error:(error:any)=>{
-        console.log(error)
-      },
-
-      complete:()=>{
+      error:(error:any)=> {
+          console.log(error)
+      },  
+      complete:()=> {
         console.log("SignIn done!")
       }
     })
     this.loginRef.reset();
-  }
+  
+}
+
 }
